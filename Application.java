@@ -79,7 +79,12 @@ public class Application {
 				File file = new File(loc);
 				
 				Appspanel.setVisible(false);
-				Store.StorePage(frame, imageExt, Name, CName, url, StrPath, DevStatus, Description);
+				try {
+					Store.StorePage(frame, imageExt, Name, CName, url, StrPath, DevStatus, Description);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 			}
 		});

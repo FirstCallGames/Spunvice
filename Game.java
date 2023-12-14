@@ -74,7 +74,12 @@ public class Game {
 				
 				File file = new File(loc);
 				
-				Store.StorePage(frame, imageExt, Name, CName, url, StrPath,DevStatus, Description);
+				try {
+					Store.StorePage(frame, imageExt, Name, CName, url, StrPath,DevStatus, Description);
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				Gamespanel.setVisible(false);
 	}
 	

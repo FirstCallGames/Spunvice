@@ -34,9 +34,10 @@ Store(JFrame frame)
 		try   
 		{ 
 		//parsing a CSV file into BufferedReader class constructor  
-		@SuppressWarnings("resource")
+		Path path = Paths.get("Applications").toAbsolutePath();
 		
-		BufferedReader br = new BufferedReader(new FileReader("Applications/AppData/Spunvice.csv"));  
+		@SuppressWarnings("resource")
+		BufferedReader br = new BufferedReader(new FileReader(path + "/AppData/Spunvice.csv"));  
 		while ((line = br.readLine()) != null)
 		{  
 		String[] app = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
@@ -75,7 +76,7 @@ Store(JFrame frame)
 		
 }
 
-public static void StorePage(JFrame frame, String imageExt, String App, String CreatorName, String url, String StrPath,String DevStatus, String Description) {
+public static void StorePage(JFrame frame, String imageExt, String App, String CreatorName, String url, String StrPath,String DevStatus, String Description) throws IOException {
 	
 	pane.getAutoscrolls();
 	
@@ -170,11 +171,9 @@ public static void UninstallP(String FileStr, JButton DownloadA)
 	Storepanel.add(Uninstall);
 }
 
-public static void DownloadProgram(String url, String StrPath, JFrame frame)
+public static void DownloadProgram(String url, String StrPath, JFrame frame) throws IOException
 {
 	Path path = Paths.get("Applications").toAbsolutePath();
-	
-	//Runtime runtime = Runtime.getRuntime();
 	
 	String loc = path + "/" + StrPath;
 	
@@ -190,11 +189,9 @@ public static void DownloadProgram(String url, String StrPath, JFrame frame)
 		UninstallP(path + "/" + StrPath, DownloadA);
 	}
 	
-	
-	
 	DownloadA.addActionListener(new ActionListener() {
 		@SuppressWarnings("unused")
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e){
 			if(DownloadA.getText() == "Download")
 			{
 				try {
@@ -218,22 +215,21 @@ public static void DownloadProgram(String url, String StrPath, JFrame frame)
 				Storepanel.repaint();
 				
 				
-			}else
+			}else if (DownloadA.getText() == "Open")
 			{
 				String location = "java -jar " + path + "/" + StrPath;
 				
-				/*try {
-					@SuppressWarnings("unused")
-					Process process = runtime.exec(location);
+				try {
+					Process process = Runtime.getRuntime().exec(location);
 				} catch (IOException e1) {
 					
 					e1.printStackTrace();
-				}*/
+				}
 				
 				DescriptionLabel.setBounds(10, 450, 900, 400);
 				Storepanel.repaint();
 				
-				UninstallP(path + "/" + StrPath, DownloadA);
+				UninstallP(path + "\\" + StrPath, DownloadA);
 			}
 		}
 		});

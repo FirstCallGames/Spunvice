@@ -99,7 +99,6 @@ public class AppsInstalled {
 		String File = pathtocreate + "/AppData/App Icon/" + imageExt;
 		
 		File file = new File(File);
-		System.out.println(File);
 		
 		
 		try {
@@ -114,7 +113,6 @@ public class AppsInstalled {
 		File file2 = new File(File2);
 		
 		try {
-			System.out.println(file2);
 			image2 = ImageIO.read(file2);
 		} catch (IOException e2) {
 			e2.printStackTrace();
@@ -138,7 +136,11 @@ public class AppsInstalled {
 			public void actionPerformed(ActionEvent e)
 			{
 				Installedpanel.setVisible(false);
-				Store.StorePage(frame, imageExt, Name, CName, url, StrPath, DevStatus, Description);
+				try {
+					Store.StorePage(frame, imageExt, Name, CName, url, StrPath, DevStatus, Description);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				Store.pane.setVisible(true);
 			}
 		});
@@ -179,7 +181,6 @@ public class AppsInstalled {
 					e1.printStackTrace();
 				}
 				Installedpanel.repaint();
-				System.out.println(path + "/" + StrPath);
 			}
 		});
 		Uninstall.addMouseListener(new MouseAdapter() {
@@ -285,29 +286,21 @@ public class AppsInstalled {
 	{		
 		if(Pressed == 1)
 		{
-				menupanel.setVisible(true);
-			
-			System.out.println(menupanel.isVisible());
+			menupanel.setVisible(false);
 			
 		}else
 		{
 			menupanel.setVisible(false);
-			System.out.println(menupanel.isVisible());
 			
 		}
-		System.out.println(menupanel.isVisible());
-		System.out.println("Menuactive: " + menuactive);
 		menuactive = false;
 		menupanel.setVisible(true);
 		
 		if(menuactive = false)
 		{
 			menupanel.setVisible(true);
-			System.out.println(menupanel);
 		}else if(menuactive = true)
 		{
-			//menupanel.setVisible(false);
-			System.out.println(menupanel);
 		} 
 	}
 	}

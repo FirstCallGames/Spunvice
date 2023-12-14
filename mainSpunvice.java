@@ -35,6 +35,8 @@ public class mainSpunvice {
 		//Creating a frame and setting the visibility to true.
 		JFrame frame = new JFrame("Spunvice");
 		
+		frame.setResizable(false);
+		
 		frame.getContentPane().setLayout(null);		
 		
 		Store store = new Store(frame);
@@ -48,7 +50,7 @@ public class mainSpunvice {
 		//Frame Properties
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(1920,1080);
+		frame.setSize(1250,700);
 		frame.setFocusable(false);
 		
 		//frame.setExtendedState(Frame.MAXIMIZED_BOTH);
