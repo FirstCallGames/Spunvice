@@ -1,0 +1,5 @@
+AppName,DownloadURL,App Install Name,App Type,App Image,Creator Name,Rating,Description,Current Development Status
+Rock Paper Scissors,https://drive.google.com/uc?id=150T32S4bCJWxLBwV-rFS_EQHwXhNq7wE&export=download,RPS.jar,Game,RPS.png,Aaditya Chaturvedy,Verified,"Ever Played Rock Paper Scissors?%n%nNope, then this is your chance play Rock Paper Scissors now against computer.%n%nLet's see how much points you get.%n%nAll The Best!",Under Development
+Calculator,https://drive.google.com/uc?id=1PNxbpc7f8CW8BfcgDLsSvVqzPZOALOAC&export=download,Calc.jar,Application,Calc.png,Divyansh,Verified,Writing a Maths Exam? or doing some basic calculation?%n%nCalculators are needed everywhere right?,Under Development
+NewQuan,null,null,Application,NQ.png,Divyansh,Not Yet Rated,NULL,Not Yet Started
+MathsEquation,null,null,Game,ME.png,Divyansh,Not Yet Rated,NULL,Not Yet Started

@@ -27,7 +27,7 @@ public class mainSpunvice {
 	public static void main(String[] args)  throws MalformedURLException, IOException, URISyntaxException 
 	{
 		//JOptionPane.showMessageDialog( null, "Warning!!! The App is currently in Development So It would have bugs. Version Experimental:- 0.1" );
-		
+		//System.out.println(System.getProperty("os.name"));
 		createFolder createFolder = new createFolder();
 		
 		Download.AppData();

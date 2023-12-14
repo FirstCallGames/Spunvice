@@ -58,7 +58,14 @@ public class Download {
         			    // handle exception
         			}
    
-        	Unzip.UnzipFile();
+        	if(System.getProperty("os.name").equals("Windows 11")){
+				System.out.println("extacted windows");
+				String zipPath = pathtocreate+"/AppData.zip";
+				Extractor.unzip(zipPath,pathtocreate.toString());
+			}else{
+				System.out.println("extacted mac");
+				Unzip.UnzipFile();
+			}
     	}
     	
     	
